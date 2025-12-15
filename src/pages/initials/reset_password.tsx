@@ -1,12 +1,13 @@
-import { useState, type FC } from "react";
-import { TitleComponent } from "@components/title";
-import { SectionInitial } from "./styles";
 import { ButtonComponent } from "@components/button";
 import { Input } from "@components/input";
-import { CiLock } from "react-icons/ci";
+import { TitleComponent } from "@components/title";
 import { patternColors } from "@shared/colors";
 import { validatePassword } from "@shared/validators/password";
+import { type FC, useState } from "react";
+import { CiLock } from "react-icons/ci";
 import { toast } from "react-toastify";
+
+import { SectionInitial } from "./styles";
 
 export const ResetPassword: FC = () => {
   const [password, setPassword] = useState("");
@@ -29,7 +30,7 @@ export const ResetPassword: FC = () => {
     }
 
     setErrors([]);
-    toast.success("Senha editada com sucesso!")
+    toast.success("Senha editada com sucesso!");
   };
 
   return (
@@ -45,7 +46,12 @@ export const ResetPassword: FC = () => {
         <Input.Root>
           <Input.Label content="Senha:" />
           <Input.Wrapper>
-            <Input.Element value={password} onChange={(e) => setPassword(e.target.value)} name="password" type="password" />
+            <Input.Element
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              type="password"
+            />
             <Input.Icon icon={CiLock} />
           </Input.Wrapper>
         </Input.Root>
@@ -53,7 +59,12 @@ export const ResetPassword: FC = () => {
         <Input.Root>
           <Input.Label content="Confirmar senha:" />
           <Input.Wrapper>
-            <Input.Element value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} name="confirmPassword" type="password" />
+            <Input.Element
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              name="confirmPassword"
+              type="password"
+            />
             <Input.Icon icon={CiLock} />
           </Input.Wrapper>
         </Input.Root>
@@ -61,9 +72,7 @@ export const ResetPassword: FC = () => {
         {errors.length > 0 && (
           <ul>
             {errors.map((error) => (
-              <li key={error}>
-                {error}
-              </li>
+              <li key={error}>{error}</li>
             ))}
           </ul>
         )}

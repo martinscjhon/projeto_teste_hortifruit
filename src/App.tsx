@@ -1,8 +1,9 @@
-import { BrowserRouter } from "react-router-dom";
-import { RoutesPages } from "./routes/index.routes";
-import { GlobalStyle } from "./global/styles";
 import type { FC } from "react";
-import { ToastContainer } from 'react-toastify';
+import { BrowserRouter } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+
+import { GlobalStyle } from "./global/styles";
+import { RoutesPages } from "./routes/index.routes";
 
 export const App: FC = () => {
   return (

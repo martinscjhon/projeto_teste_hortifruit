@@ -1,19 +1,20 @@
-import { useState, type ChangeEvent, type FC } from "react";
-import { TitleComponent } from "@components/title";
-import { SectionInitial } from "./styles";
 import { ButtonComponent } from "@components/button";
 import { Input } from "@components/input";
-import { CiLock } from "react-icons/ci";
+import { TitleComponent } from "@components/title";
 import { patternColors } from "@shared/colors";
 import { validatePassword } from "@shared/validators/password";
-import { toast } from "react-toastify";
+import { type ChangeEvent, type FC, useState } from "react";
+import { CiLock } from "react-icons/ci";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+
+import { SectionInitial } from "./styles";
 
 interface IRegister {
-  name: string,
-  tel: string,
-  password: string,
-  email: string
+  name: string;
+  tel: string;
+  password: string;
+  email: string;
 }
 
 export const Register: FC = () => {
@@ -21,25 +22,30 @@ export const Register: FC = () => {
     email: "",
     name: "",
     password: "",
-    tel: ""
+    tel: "",
   });
   const [errors, setErrors] = useState<string[]>([]);
 
   const change = (e: ChangeEvent<any>) => {
     const name = e.target.name;
-    const value = e.target.value
+    const value = e.target.value;
 
     setDados({
       ...dados,
-      [name]: value
-    })
-  }
+      [name]: value,
+    });
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (dados.name === "" || dados.password === "" || dados.email === "" || dados.tel === "") {
-      toast.info('Preencha todos os campos')
+    if (
+      dados.name === "" ||
+      dados.password === "" ||
+      dados.email === "" ||
+      dados.tel === ""
+    ) {
+      toast.info("Preencha todos os campos");
       return;
     }
 
@@ -51,7 +57,7 @@ export const Register: FC = () => {
     }
 
     setErrors([]);
-    toast.success("Senha editada com sucesso!")
+    toast.success("Senha editada com sucesso!");
   };
 
   return (
@@ -75,7 +81,12 @@ export const Register: FC = () => {
         <Input.Root>
           <Input.Label content="E-mail:" />
           <Input.Wrapper>
-            <Input.Element value={dados.email} onChange={change} name="email" type="email" />
+            <Input.Element
+              value={dados.email}
+              onChange={change}
+              name="email"
+              type="email"
+            />
             <Input.Icon icon={CiLock} />
           </Input.Wrapper>
         </Input.Root>
@@ -91,7 +102,12 @@ export const Register: FC = () => {
         <Input.Root>
           <Input.Label content="Senha:" />
           <Input.Wrapper>
-            <Input.Element value={dados.password} onChange={change} name="password" type="password" />
+            <Input.Element
+              value={dados.password}
+              onChange={change}
+              name="password"
+              type="password"
+            />
             <Input.Icon icon={CiLock} />
           </Input.Wrapper>
         </Input.Root>
@@ -99,9 +115,7 @@ export const Register: FC = () => {
         {errors.length > 0 && (
           <ul>
             {errors.map((error) => (
-              <li key={error}>
-                {error}
-              </li>
+              <li key={error}>{error}</li>
             ))}
           </ul>
         )}

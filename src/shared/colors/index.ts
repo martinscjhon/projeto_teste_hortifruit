@@ -4,5 +4,5 @@ export const patternColors = {
   white: "#fff",
   gray: "#8d8d8d",
   black: "#000",
-  danger: "#f44"
+  danger: "#f44",
 };

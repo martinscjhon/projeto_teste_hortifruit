@@ -1,9 +1,9 @@
-import { Route, Routes } from "react-router-dom";
-import type { FC } from "react";
 import { Login } from "@pages/initials/login";
-import { SendEmailResetPassword } from "@pages/initials/send_email_reset_password";
-import { ResetPassword } from "@pages/initials/reset_password";
 import { Register } from "@pages/initials/register";
+import { ResetPassword } from "@pages/initials/reset_password";
+import { SendEmailResetPassword } from "@pages/initials/send_email_reset_password";
+import type { FC } from "react";
+import { Route, Routes } from "react-router-dom";
 
 export const RoutesPages: FC = () => {
   return (

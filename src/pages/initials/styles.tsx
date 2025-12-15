@@ -1,5 +1,6 @@
-import styled from "styled-components";
 import bgLogin from "@assets/background_login.jpg";
+import styled from "styled-components";
+
 import { patternColors } from "../../shared/colors";
 
 export const SectionInitial = styled.section`
@@ -49,5 +50,6 @@ export const SectionInitial = styled.section`
   }
 
   p:nth-child(1) {
-    text-align: center;  }
+    text-align: center;
+  }
 `;

@@ -5,14 +5,14 @@ interface ITextComponent {
   content: string;
   size?: string;
   weight?: number;
-  color?: string
+  color?: string;
 }
 
 export const TextComponent: FC<ITextComponent> = ({
   content,
   size = "16px",
   weight = 400,
-  color = patternColors.black
+  color = patternColors.black,
 }) => {
   return <p style={{ fontSize: size, fontWeight: weight, color }}>{content}</p>;
 };

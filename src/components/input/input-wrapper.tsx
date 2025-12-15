@@ -1,4 +1,5 @@
 import type { FC, ReactNode } from "react";
+
 import { patternColors } from "../../shared/colors";
 
 interface IInputWrapper {

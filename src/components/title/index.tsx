@@ -1,4 +1,5 @@
 import type { FC } from "react";
+
 import { patternColors } from "../../shared/colors";
 
 interface ITitleContent {

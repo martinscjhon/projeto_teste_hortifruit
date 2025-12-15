@@ -1,4 +1,5 @@
 import { type ButtonHTMLAttributes, type FC } from "react";
+
 import { patternColors } from "../../shared/colors";
 
 interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
