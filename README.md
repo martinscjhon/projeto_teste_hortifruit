@@ -70,3 +70,23 @@ A aplicação estará disponível no navegador no seguinte endereço:
 - Node.js
 - npm / Yarn
 - Vite (react)
+
+
+### ▶️ Outras instruções
+
+1. Esse projeto está configurado com conventional Commit, ou seja, para realizar o commit, é necessário colocar na frente da mensagem os parâmetros: fix, feat, style, chore, etc.
+
+Exemplo: Nova implementação
+
+git commit -m "feat: <mensagem>"
+
+Exemplo: Bugfix
+
+git commit -m "fix: <mensagem>"
+
+Exemplo: Mexendo em css
+
+git commit -m "style: <mensagem>
+
+
+Isso nos ajudará a identificar o que cada commit representa.
