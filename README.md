@@ -78,15 +78,20 @@ A aplicação estará disponível no navegador no seguinte endereço:
 
 Exemplo: Nova implementação
 
+```bash
 git commit -m "feat: <mensagem>"
+```
 
 Exemplo: Bugfix
 
+```bash
 git commit -m "fix: <mensagem>"
+```
 
 Exemplo: Mexendo em css
 
+```bash
 git commit -m "style: <mensagem>
-
+```
 
 Isso nos ajudará a identificar o que cada commit representa.
