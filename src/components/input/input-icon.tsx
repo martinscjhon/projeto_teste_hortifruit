@@ -1,11 +1,9 @@
-import type { ElementType, FC } from "react"
+import type { ElementType, FC } from "react";
 
 interface IInputIcon {
-  icon: ElementType
+  icon: ElementType;
 }
 
 export const InputIcon: FC<IInputIcon> = ({ icon: Icon }) => {
-  return (
-    <Icon />
-  )
-}
+  return <Icon />;
+};

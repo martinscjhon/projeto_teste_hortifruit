@@ -14,10 +14,13 @@ export const Login: FC = () => {
       <div className="background"></div>
 
       <form>
-        <TitleComponent content={"Faça seu login"} color={patternColors.orange} />
+        <TitleComponent
+          content={"Faça seu login"}
+          color={patternColors.orange}
+        />
 
         <Input.Root>
-          <Input.Label content='E-mail: ' />
+          <Input.Label content="E-mail: " />
           <Input.Wrapper>
             <Input.Element />
             <Input.Icon icon={CiMail} />
@@ -25,7 +28,7 @@ export const Login: FC = () => {
         </Input.Root>
 
         <Input.Root>
-          <Input.Label content='Senha: ' />
+          <Input.Label content="Senha: " />
           <Input.Wrapper>
             <Input.Element type="password" />
             <Input.Icon icon={CiLock} />
@@ -39,5 +42,5 @@ export const Login: FC = () => {
 
       <TextComponent content={"Versão 1.0"} size="12px" weight={400} />
     </SectionLogin>
-  )
-}
+  );
+};

@@ -1,13 +1,9 @@
-import type { FC, ReactNode } from "react"
+import type { FC, ReactNode } from "react";
 
 interface IInput {
-  children: ReactNode
+  children: ReactNode;
 }
 
 export const InputRoot: FC<IInput> = ({ children }) => {
-  return (
-    <div>
-      {children}
-    </div>
-  )
-}
+  return <div>{children}</div>;
+};

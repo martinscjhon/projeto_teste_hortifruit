@@ -1,15 +1,13 @@
-import type { FC } from "react"
+import type { FC } from "react";
 
 interface IInputLabel {
-  content: string
+  content: string;
 }
 
 const style = {
-  fontSize: "13.5px"
-}
+  fontSize: "13.5px",
+};
 
 export const InputLabel: FC<IInputLabel> = ({ content }) => {
-  return (
-    <label style={style}>{content}</label>
-  )
-}
+  return <label style={style}>{content}</label>;
+};

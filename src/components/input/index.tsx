@@ -9,5 +9,5 @@ export const Input = {
   Label: InputLabel,
   Icon: InputIcon,
   Element: InputComponent,
-  Wrapper: InputWrapper
-}
+  Wrapper: InputWrapper,
+};

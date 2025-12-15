@@ -32,11 +32,11 @@ export const SectionLogin = styled.section`
 
     a {
       text-align: center;
-      color: ${patternColors.orangeDark}
+      color: ${patternColors.orangeDark};
     }
   }
 
-   img {
+  img {
     width: auto;
   }
 
