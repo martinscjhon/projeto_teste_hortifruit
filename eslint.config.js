@@ -4,6 +4,7 @@ import tseslint from "typescript-eslint";
 import react from "eslint-plugin-react";
 import prettierPlugin from "eslint-plugin-prettier";
 import prettierConfig from "eslint-config-prettier";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
 
 export default [
   js.configs.recommended,
@@ -21,12 +22,21 @@ export default [
     plugins: {
       react,
       prettier: prettierPlugin,
+      "simple-import-sort": simpleImportSort,
     },
     settings: {
       react: { version: "detect" },
     },
     rules: {
-      // Suas regras
+      /* =========================
+         📦 Import sorting
+      ========================= */
+      "simple-import-sort/imports": "error",
+      "simple-import-sort/exports": "error",
+
+      /* =========================
+         Regras existentes
+      ========================= */
       "@typescript-eslint/no-explicit-any": "off",
       "react/no-unescaped-entities": "off",
       "no-useless-escape": "off",
