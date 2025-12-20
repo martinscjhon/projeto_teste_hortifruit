@@ -6,5 +6,5 @@ export const patternColors = {
   grayLight: "#f5f5f5",
   black: "#000",
   danger: "#f44",
-  green: "#059f4b"
+  green: "#059f4b",
 };

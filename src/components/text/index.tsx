@@ -6,7 +6,7 @@ interface ITextComponent {
   size?: string;
   weight?: number;
   color?: string;
-  className?: string
+  className?: string;
 }
 
 export const TextComponent: FC<ITextComponent> = ({
@@ -14,7 +14,14 @@ export const TextComponent: FC<ITextComponent> = ({
   size = "16px",
   weight = 400,
   color = patternColors.black,
-  className
+  className,
 }) => {
-  return <p style={{ fontSize: size, fontWeight: weight, color }} className={className}>{content}</p>;
+  return (
+    <p
+      style={{ fontSize: size, fontWeight: weight, color }}
+      className={className}
+    >
+      {content}
+    </p>
+  );
 };

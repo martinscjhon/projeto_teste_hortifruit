@@ -1,9 +1,10 @@
-import type { FC } from "react";
-import { Header } from "./styles";
-import profile from "@assets/profile.jpg"
+import profile from "@assets/profile.jpg";
 import { IconButtonComponent } from "@components/icon_button";
+import type { FC } from "react";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import { IoIosMenu } from "react-icons/io";
-import { AiOutlineShoppingCart  } from "react-icons/ai";
+
+import { Header } from "./styles";
 
 export const ToolbarModule: FC = () => {
   return (
@@ -15,5 +16,5 @@ export const ToolbarModule: FC = () => {
         <img src={profile} alt="profile" />
       </div>
     </Header>
-  )
-}
+  );
+};

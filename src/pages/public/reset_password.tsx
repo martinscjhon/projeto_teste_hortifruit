@@ -6,8 +6,8 @@ import { validatePassword } from "@shared/validators/password";
 import { type FC, useState } from "react";
 import { CiLock } from "react-icons/ci";
 import { toast } from "react-toastify";
-import { Section } from "./styles";
 
+import { Section } from "./styles";
 
 export const ResetPassword: FC = () => {
   const [password, setPassword] = useState("");

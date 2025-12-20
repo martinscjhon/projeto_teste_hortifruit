@@ -16,4 +16,4 @@ export const PrivateMain = styled.main`
 export const ContentWrapper = styled.section`
   overflow-y: auto;
   padding: 16px;
-`
+`;

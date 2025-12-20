@@ -8,8 +8,8 @@ import { type FC, useState } from "react";
 import { CiMail } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
-import { Section } from "./styles";
 
+import { Section } from "./styles";
 
 export const SendEmailResetPassword: FC = () => {
   const [email, setEmail] = useState<string>("");

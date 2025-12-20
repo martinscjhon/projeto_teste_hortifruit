@@ -6,7 +6,7 @@ interface IIconButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   icon: ElementType;
   backgroundColor?: string;
   color?: string;
-  size?: string
+  size?: string;
 }
 
 export const IconButtonComponent: FC<IIconButton> = ({
