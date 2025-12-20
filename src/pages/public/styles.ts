@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { patternColors } from "../../shared/colors";
 
-export const SectionInitial = styled.section`
+export const Section = styled.section`
   display: flex;
   flex-direction: column;
   gap: 1rem;

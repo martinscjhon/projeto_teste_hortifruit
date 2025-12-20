@@ -6,8 +6,8 @@ import { validatePassword } from "@shared/validators/password";
 import { type FC, useState } from "react";
 import { CiLock } from "react-icons/ci";
 import { toast } from "react-toastify";
+import { Section } from "./styles";
 
-import { SectionInitial } from "./styles";
 
 export const ResetPassword: FC = () => {
   const [password, setPassword] = useState("");
@@ -34,7 +34,7 @@ export const ResetPassword: FC = () => {
   };
 
   return (
-    <SectionInitial>
+    <Section>
       <div className="background"></div>
 
       <form onSubmit={handleSubmit}>
@@ -79,6 +79,6 @@ export const ResetPassword: FC = () => {
 
         <ButtonComponent content="CADASTRAR SENHA" />
       </form>
-    </SectionInitial>
+    </Section>
   );
 };

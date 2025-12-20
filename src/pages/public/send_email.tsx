@@ -1,16 +1,17 @@
 import { ButtonComponent } from "@components/button";
 import { Input } from "@components/input";
+import { TextComponent } from "@components/text";
 import { TitleComponent } from "@components/title";
 import { patternColors } from "@shared/colors";
+import type React from "react";
 import { type FC, useState } from "react";
-import { CiLock, CiMail } from "react-icons/ci";
+import { CiMail } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { Section } from "./styles";
 
-import { SectionInitial } from "./styles";
 
-export const Login: FC = () => {
-  const [password, setPassword] = useState<string>("");
+export const SendEmailResetPassword: FC = () => {
   const [email, setEmail] = useState<string>("");
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -21,54 +22,41 @@ export const Login: FC = () => {
       return;
     }
 
-    if (password == "") {
-      toast.info("Senha não informada");
-      return;
-    }
-
     toast.success("E-mail enviado com sucesso!");
   };
 
   return (
-    <SectionInitial>
+    <Section>
       <div className="background"></div>
 
       <form onSubmit={handleSubmit}>
         <TitleComponent
-          content={"Faça seu login"}
+          content={"Informe seu e-mail"}
           color={patternColors.orange}
         />
 
+        <TextComponent
+          content={
+            "Digite seu e-mail para que possamos enviar um link para criar uma nova senha."
+          }
+          size="12px"
+          weight={400}
+        />
         <Input.Root>
           <Input.Label content="E-mail: " />
           <Input.Wrapper>
             <Input.Element
-              value={email}
               onChange={(e) => setEmail(e.target.value)}
-              name="email"
-              type="email"
+              value={email}
             />
             <Input.Icon icon={CiMail} />
           </Input.Wrapper>
         </Input.Root>
 
-        <Input.Root>
-          <Input.Label content="Senha: " />
-          <Input.Wrapper>
-            <Input.Element
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              name="password"
-            />
-            <Input.Icon icon={CiLock} />
-          </Input.Wrapper>
-        </Input.Root>
+        <ButtonComponent content="ENVIAR" />
 
-        <ButtonComponent content="ACESSAR" />
-
-        <Link to={"/esquecisenha"}>Esqueci minha senha</Link>
+        <Link to={"/"}>Voltar</Link>
       </form>
-    </SectionInitial>
+    </Section>
   );
 };

@@ -7,8 +7,9 @@ import { type ChangeEvent, type FC, useState } from "react";
 import { CiLock } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import { Section } from "./styles";
 
-import { SectionInitial } from "./styles";
+
 
 interface IRegister {
   name: string;
@@ -61,7 +62,7 @@ export const Register: FC = () => {
   };
 
   return (
-    <SectionInitial>
+    <Section>
       <div className="background"></div>
 
       <form onSubmit={handleSubmit}>
@@ -124,6 +125,6 @@ export const Register: FC = () => {
 
         <Link to={"/"}>Voltar</Link>
       </form>
-    </SectionInitial>
+    </Section>
   );
 };
