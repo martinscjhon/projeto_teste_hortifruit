@@ -1,13 +1,6 @@
-import { type ButtonHTMLAttributes, type ElementType, type FC } from "react";
-
+import { type FC } from "react";
 import { patternColors } from "../../shared/colors";
-
-interface IIconButton extends ButtonHTMLAttributes<HTMLButtonElement> {
-  icon: ElementType;
-  backgroundColor?: string;
-  color?: string;
-  size?: string;
-}
+import type { IIconButton } from "src/@types/@components/icon_button";
 
 export const IconButtonComponent: FC<IIconButton> = ({
   icon: Icon,

@@ -1,10 +1,6 @@
-import type { FC, ReactNode } from "react";
-
+import type { FC } from "react";
 import { patternColors } from "../../shared/colors";
-
-interface IInputWrapper {
-  children: ReactNode;
-}
+import type { IInputWrapper } from "src/@types/@components/input_wrapper";
 
 const style = {
   display: "flex",

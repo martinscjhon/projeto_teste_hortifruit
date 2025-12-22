@@ -2,10 +2,7 @@ import { TextComponent } from "@components/text";
 import type { FC } from "react";
 
 import { patternColors } from "../../shared/colors";
-
-interface ISubTitle {
-  content: string;
-}
+import type { ISubTitle } from "src/@types/@components/subtitle";
 
 export const SubTitleComponent: FC<ISubTitle> = ({ content }) => {
   return (

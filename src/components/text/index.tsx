@@ -1,13 +1,6 @@
 import { patternColors } from "@shared/colors";
 import type { FC } from "react";
-
-interface ITextComponent {
-  content: string;
-  size?: string;
-  weight?: number;
-  color?: string;
-  className?: string;
-}
+import type { ITextComponent } from "src/@types/@components/text";
 
 export const TextComponent: FC<ITextComponent> = ({
   content,
@@ -20,8 +13,7 @@ export const TextComponent: FC<ITextComponent> = ({
     <p
       style={{ fontSize: size, fontWeight: weight, color }}
       className={className}
-    >
-      {content}
-    </p>
+      dangerouslySetInnerHTML={{ __html: content ?? "" }}
+    />
   );
 };

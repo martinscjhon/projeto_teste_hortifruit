@@ -24,19 +24,8 @@ export const Header = styled.header`
     gap: 15px;
     position: relative;
 
-    .products {
-      background-color: ${patternColors.danger};
+    .wrapper_badge_component {
       position: absolute;
-      border-radius: 100%;
-      width: 15px;
-      height: 15px;
-      text-align: center;
-      padding: 5px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 10px;
-      color: ${patternColors.white};
       top: 0px;
       left: 10px;
     }

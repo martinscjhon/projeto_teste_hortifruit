@@ -1,6 +1,5 @@
-import type { FC, InputHTMLAttributes } from "react";
-
-type InputProps = InputHTMLAttributes<HTMLInputElement>;
+import type { FC } from "react";
+import type { InputProps } from "src/@types/@components/input_element";
 
 const style = {
   height: "2.5rem",

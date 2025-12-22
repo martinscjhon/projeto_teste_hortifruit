@@ -1,11 +1,6 @@
 import type { FC } from "react";
-
 import { patternColors } from "../../shared/colors";
-
-interface ITitleContent {
-  content: string;
-  color?: string;
-}
+import type { ITitleContent } from "src/@types/@components/title";
 
 export const TitleComponent: FC<ITitleContent> = ({
   content,

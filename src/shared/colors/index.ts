@@ -7,4 +7,5 @@ export const patternColors = {
   black: "#000",
   danger: "#f44",
   green: "#059f4b",
+  orangeLight: "#fff1d8"
 };

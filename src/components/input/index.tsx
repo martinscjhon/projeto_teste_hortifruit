@@ -1,8 +1,8 @@
 import { InputComponent } from "./input";
-import { InputIcon } from "./input-icon";
-import { InputLabel } from "./input-label";
-import { InputRoot } from "./input-root";
-import { InputWrapper } from "./input-wrapper";
+import { InputIcon } from "./input_icon";
+import { InputLabel } from "./input_label";
+import { InputRoot } from "./input_root";
+import { InputWrapper } from "./input_wrapper";
 
 export const Input = {
   Root: InputRoot,

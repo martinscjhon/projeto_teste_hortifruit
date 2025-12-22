@@ -12,20 +12,32 @@ export const Wrapper = styled.div`
     font-style: italic;
   }
 
+  .wrapper_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      font-size: 11px;
+      color: ${patternColors.orange};
+      font-style: italic;
+    }
+  }
+
   .wrapper_map {
     display: flex;
     align-items: center;
     overflow-x: auto;
     gap: 1.5rem;
 
-    height: 11rem;
+    height: 10rem;
     padding: 10px 1px;
   }
 
   .wrapper_container {
     background-color: ${patternColors.grayLight};
-    min-width: 130px;
-    max-width: 350px;
+    min-width: 110px;
+    max-width: 320px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -36,17 +48,29 @@ export const Wrapper = styled.div`
       rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     border-radius: 5px;
     cursor: pointer;
+    position: relative;
 
     .description {
       font-style: italic;
     }
 
     img {
-      width: 63px;
+      width: 50px;
       object-fit: contain;
-      max-height: 63px;
+      max-height: 40px;
       margin: 0 auto;
       mix-blend-mode: multiply;
     }
+
+    .wrapper_badge_component {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+  }
+
+  .wrapper_container.active {
+    background-color: ${patternColors.orangeLight};
+    border:1px solid ${patternColors.orange};
   }
 `;

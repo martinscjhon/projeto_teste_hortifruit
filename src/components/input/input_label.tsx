@@ -1,8 +1,5 @@
 import type { FC } from "react";
-
-interface IInputLabel {
-  content: string;
-}
+import type { IInputLabel } from "src/@types/@components/input_label";
 
 const style = {
   fontSize: "13.5px",

@@ -59,5 +59,5 @@ export const GlobalStyle = createGlobalStyle`
   [disabled] {
       opacity: 0.6;
       cursor:not-allowed;
-  }    
+  }
 `;
