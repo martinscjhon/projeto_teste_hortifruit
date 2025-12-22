@@ -8,7 +8,13 @@ export const MockAcougue: IProductMock = {
   categorieId: "5a4059d3-b40a-45c3-900e-577ee86400e7",
   categorieName: "Acougue",
   products: [
-    { path: carne, name: "Alcatra KG", value: 5, id: uuid(), description: null },
+    {
+      path: carne,
+      name: "Alcatra KG",
+      value: 5,
+      id: uuid(),
+      description: null,
+    },
     {
       path: peixe,
       name: "Peixe tilápia",
@@ -23,5 +29,5 @@ export const MockAcougue: IProductMock = {
       id: uuid(),
       description: "Sadia",
     },
-  ]
-}
+  ],
+};

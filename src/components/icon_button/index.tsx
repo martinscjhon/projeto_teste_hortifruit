@@ -1,6 +1,7 @@
 import { type FC } from "react";
-import { patternColors } from "../../shared/colors";
 import type { IIconButton } from "src/@types/@components/icon_button";
+
+import { patternColors } from "../../shared/colors";
 
 export const IconButtonComponent: FC<IIconButton> = ({
   icon: Icon,

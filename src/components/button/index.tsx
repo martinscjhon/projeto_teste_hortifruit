@@ -1,6 +1,7 @@
-import type { IButton } from "src/@types/@components/button";
-import { patternColors } from "../../shared/colors";
 import type { FC } from "react";
+import type { IButton } from "src/@types/@components/button";
+
+import { patternColors } from "../../shared/colors";
 
 const style = {
   height: "2.5rem",
@@ -20,7 +21,10 @@ export const ButtonComponent: FC<IButton> = ({
   ...rest
 }) => {
   return (
-    <button {...rest} style={{ ...style, backgroundColor, color, fontSize: size }}>
+    <button
+      {...rest}
+      style={{ ...style, backgroundColor, color, fontSize: size }}
+    >
       {content}
       {Icon && <Icon />}
     </button>

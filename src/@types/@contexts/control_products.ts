@@ -1,10 +1,10 @@
 export type Product = {
   id: string;
-  price:  number;
+  price: number;
   description: string | null;
   path: string;
   name: string;
-  quantity: number
+  quantity: number;
 };
 
 export type ProductContextValue = {

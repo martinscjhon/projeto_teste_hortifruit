@@ -1,13 +1,11 @@
-import {
-  createContext,
-  useMemo,
-  useState,
-  type ReactNode,
-} from "react";
-import type { Product, ProductContextValue } from "src/@types/@contexts/control_products";
+import { createContext, type ReactNode, useMemo, useState } from "react";
+import type {
+  Product,
+  ProductContextValue,
+} from "src/@types/@contexts/control_products";
 
 export const ProductContext = createContext<ProductContextValue | undefined>(
-  undefined
+  undefined,
 );
 
 /* =======================
@@ -33,7 +31,7 @@ export function ProductProvider({ children }: { children: ReactNode }) {
 
   const updateProduct = (id: string, patch: Partial<Product>) => {
     setProducts((prev) =>
-      prev.map((p) => (p.id === id ? { ...p, ...patch } : p))
+      prev.map((p) => (p.id === id ? { ...p, ...patch } : p)),
     );
   };
 
@@ -45,12 +43,10 @@ export function ProductProvider({ children }: { children: ReactNode }) {
       clearProducts,
       updateProduct,
     }),
-    [products]
+    [products],
   );
 
   return (
-    <ProductContext.Provider value={value}>
-      {children}
-    </ProductContext.Provider>
+    <ProductContext.Provider value={value}>{children}</ProductContext.Provider>
   );
 }

@@ -5,9 +5,8 @@ import pao from "@assets/pao.jpg";
 import presunto from "@assets/presunto.jpg";
 import queijo from "@assets/quejo.jpg";
 import requeijao from "@assets/requeijao.jpg";
-import { v4 as uuid } from "uuid";
-
 import type { IProductMock } from "src/@types/@mocks/products";
+import { v4 as uuid } from "uuid";
 
 export const MockPadaria: IProductMock = {
   categorieId: "58c4f2e2-1e8e-4a41-a03d-ae941ac6a6d3",
@@ -56,5 +55,5 @@ export const MockPadaria: IProductMock = {
       id: uuid(),
       description: null,
     },
-  ]
-}
+  ],
+};

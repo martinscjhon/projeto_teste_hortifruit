@@ -1,6 +1,7 @@
 import type { FC } from "react";
-import { patternColors } from "../../shared/colors";
 import type { IInputWrapper } from "src/@types/@components/input_wrapper";
+
+import { patternColors } from "../../shared/colors";
 
 const style = {
   display: "flex",

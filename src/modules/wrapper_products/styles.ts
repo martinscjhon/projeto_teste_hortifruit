@@ -71,6 +71,6 @@ export const Wrapper = styled.div`
 
   .wrapper_container.active {
     background-color: ${patternColors.orangeLight};
-    border:1px solid ${patternColors.orange};
+    border: 1px solid ${patternColors.orange};
   }
 `;

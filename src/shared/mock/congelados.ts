@@ -3,9 +3,8 @@ import paoQueijo from "@assets/pao_queijo.png";
 import pizza from "@assets/pizza.png";
 import sorvete from "@assets/sorvete.png";
 import waffle from "@assets/waffle.jpg";
-import { v4 as uuid } from "uuid";
-
 import type { IProductMock } from "src/@types/@mocks/products";
+import { v4 as uuid } from "uuid";
 
 export const MockCongelados: IProductMock = {
   categorieId: "5127097e-f064-4ea8-9f4c-2dabedb48c05",
@@ -28,5 +27,5 @@ export const MockCongelados: IProductMock = {
       description: null,
     },
     { path: bacon, name: "Bacon", value: 10, id: uuid(), description: null },
-  ]
-}
+  ],
+};

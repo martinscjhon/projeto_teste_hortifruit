@@ -4,6 +4,6 @@ export interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   content: string;
   backgroundColor?: string;
   color?: string;
-  size?: string
-  icon?: ElementType
+  size?: string;
+  icon?: ElementType;
 }

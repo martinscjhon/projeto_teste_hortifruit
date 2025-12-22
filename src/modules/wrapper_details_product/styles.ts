@@ -2,7 +2,7 @@ import { patternColors } from "@shared/colors";
 import styled from "styled-components";
 
 export const WrapperOverlay = styled.div`
- position: fixed;
+  position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.85);
   display: flex;
@@ -20,7 +20,6 @@ export const WrapperOverlay = styled.div`
   }
 `;
 
-
 export const WrraperContent = styled.section`
   width: 100%;
   height: 60%;
@@ -36,7 +35,9 @@ export const WrraperContent = styled.section`
     justify-content: space-between;
     border-bottom: 1px solid ${patternColors.grayLight};
     padding-bottom: 10px;
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    box-shadow:
+      rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+      rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   }
 
   .wrapper_image {
@@ -45,7 +46,9 @@ export const WrraperContent = styled.section`
     justify-content: center;
     flex-direction: column;
     background-color: ${patternColors.grayLight};
-    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    box-shadow:
+      rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+      rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 
     padding: 1rem 0px;
     gap: 1rem;

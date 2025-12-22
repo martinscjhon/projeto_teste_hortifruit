@@ -6,8 +6,8 @@ import sucoCaju from "@assets/suco_cujo.jpg";
 import sucoNaturalLaranja from "@assets/suco_laranja.jpg";
 import sucoNaturalManga from "@assets/suco_manga.png";
 import sucoNaturalMaracuja from "@assets/suco_maracuja.jpg";
-import { v4 as uuid } from "uuid";
 import type { IProductMock } from "src/@types/@mocks/products";
+import { v4 as uuid } from "uuid";
 
 export const MockBebidas: IProductMock = {
   categorieId: "9a2098af-eb26-4085-af4a-e0a2f35aa419",
@@ -69,6 +69,5 @@ export const MockBebidas: IProductMock = {
       id: uuid(),
       description: null,
     },
-  ]
-}
-
+  ],
+};
