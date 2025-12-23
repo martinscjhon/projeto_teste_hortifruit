@@ -8,7 +8,7 @@ export const TextComponent: FC<ITextComponent> = ({
   weight = 400,
   color = patternColors.black,
   className,
-  fontStyle = "normal"
+  fontStyle = "normal",
 }) => {
   return (
     <p

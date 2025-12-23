@@ -1,16 +1,16 @@
-import { useEffect, useMemo, useState, type FC } from "react";
-import { useParams } from "react-router-dom";
-import { CiSearch } from "react-icons/ci";
-
-import { PrincipalContainer } from "./styles";
-import { TitleComponent } from "@components/title";
-import { WrapperAllProductsCategorieModule } from "@modules/wrapper_all_products_categorie";
 import { ActionsCart } from "@components/actions_cart";
 import { Input } from "@components/input";
 import { LoadingComponent } from "@components/loading";
-
-import { listAllCategoriesMock } from "@shared/mock/list_all_categories";
+import { TitleComponent } from "@components/title";
 import { useDebounced } from "@hooks/debounce";
+import { WrapperAllProductsCategorieModule } from "@modules/wrapper_all_products_categorie";
+import { listAllCategoriesMock } from "@shared/mock/list_all_categories";
+import { type FC, useEffect, useMemo, useState } from "react";
+import { CiSearch } from "react-icons/ci";
+import { useParams } from "react-router-dom";
+import type { IDadosProducts } from "src/@types/@modules/wrapper_list_products";
+
+import { PrincipalContainer } from "./styles";
 
 export const DetailsCategorie: FC = () => {
   const { categorieId } = useParams();
@@ -20,7 +20,9 @@ export const DetailsCategorie: FC = () => {
   const debouncedSearch = useDebounced(search, 300);
 
   useEffect(() => {
-    const found = listAllCategoriesMock.find((p) => p.categorieId === categorieId);
+    const found = listAllCategoriesMock.find(
+      (p) => p.categorieId === categorieId,
+    );
     setCategory(found ?? null);
   }, [categorieId]);
 
@@ -30,8 +32,8 @@ export const DetailsCategorie: FC = () => {
 
     if (!term) return list;
 
-    return list.filter((p: any) => {
-      const name = (p?.name).toString().toLowerCase();
+    return list.filter((p: IDadosProducts) => {
+      const name = p.name.toString().toLowerCase();
       return name.includes(term);
     });
   }, [debouncedSearch, category]);

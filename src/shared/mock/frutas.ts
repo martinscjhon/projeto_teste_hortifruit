@@ -45,7 +45,7 @@ export const MockFrutas: IProductMock = {
       id: uuid(),
       description: null,
     },
-     {
+    {
       path: banana,
       name: "Banana prata kg",
       value: 5,

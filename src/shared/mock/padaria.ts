@@ -55,7 +55,7 @@ export const MockPadaria: IProductMock = {
       id: uuid(),
       description: null,
     },
-       { path: pao, name: "Pão panco", value: 5, id: uuid(), description: null },
+    { path: pao, name: "Pão panco", value: 5, id: uuid(), description: null },
     {
       path: bisnaguinha,
       name: "Bisnaguinha panco",

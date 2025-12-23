@@ -1,4 +1,3 @@
-import { patternColors } from "@shared/colors";
 import { styled } from "styled-components";
 
 export const PrincipalContainer = styled.div`

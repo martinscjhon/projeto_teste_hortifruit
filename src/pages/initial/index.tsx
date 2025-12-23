@@ -1,19 +1,19 @@
+import { ActionsCart } from "@components/actions_cart";
 import { Input } from "@components/input";
 import { TitleComponent } from "@components/title";
+import { useDebounced } from "@hooks/debounce";
 import { WrapperResumeProductsModule } from "@modules/wrapper_resume_products";
 import { MockAcougue } from "@shared/mock/acougue";
 import { MockBebidas } from "@shared/mock/bebidas";
 import { MockCongelados } from "@shared/mock/congelados";
 import { MockFrutas } from "@shared/mock/frutas";
+import { listCategorieMock } from "@shared/mock/list_categories_names";
 import { MockPadaria } from "@shared/mock/padaria";
 import { MockVerdurasLegumes } from "@shared/mock/verduras_legumes";
 import { type FC, useMemo, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 
 import { PrincipalContainer } from "./styles";
-import { ActionsCart } from "@components/actions_cart";
-import { listCategorieMock } from "@shared/mock/list_categories_names";
-import { useDebounced } from "@hooks/debounce";
 
 export const PageInitial: FC = () => {
   const [search, setSearch] = useState<string>("");
@@ -22,7 +22,7 @@ export const PageInitial: FC = () => {
   const categorieFilter = useMemo(() => {
     const term = debouncedSearch.trim().toLowerCase();
     if (!term) return listCategorieMock;
-    return listCategorieMock.filter(c => c.toLowerCase().includes(term));
+    return listCategorieMock.filter((c) => c.toLowerCase().includes(term));
   }, [debouncedSearch]);
 
   return (

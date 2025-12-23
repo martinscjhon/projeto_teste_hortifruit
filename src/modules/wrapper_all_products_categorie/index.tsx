@@ -51,7 +51,11 @@ export const WrapperAllProductsCategorieModule: FC<IWrapperListProducts> = ({
                 key={v.id}
               >
                 <div className="wrapper_description_product">
-                  <TextComponent content={v.name} size="11px"    fontStyle="italic"/>
+                  <TextComponent
+                    content={v.name}
+                    size="11px"
+                    fontStyle="italic"
+                  />
                   {v.description && (
                     <TextComponent
                       content={v.description}

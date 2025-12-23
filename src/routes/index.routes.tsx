@@ -1,7 +1,7 @@
 import { PrivateLayout } from "@modules/layout/private";
 import { PublicLayout } from "@modules/layout/public";
-import { DetailsCategorie } from "@pages/list_all_products_categorie";
 import { PageInitial } from "@pages/initial";
+import { DetailsCategorie } from "@pages/list_all_products_categorie";
 import { Login } from "@pages/public/login";
 import { Register } from "@pages/public/register";
 import { ResetPassword } from "@pages/public/reset_password";

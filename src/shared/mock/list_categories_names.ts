@@ -11,5 +11,5 @@ export const listCategorieMock = [
   MockBebidas.categorieName,
   MockPadaria.categorieName,
   MockVerdurasLegumes.categorieName,
-  MockAcougue.categorieName
-]
+  MockAcougue.categorieName,
+];

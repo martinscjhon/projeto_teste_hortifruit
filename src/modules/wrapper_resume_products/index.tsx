@@ -17,7 +17,7 @@ import { Wrapper } from "./styles";
 export const WrapperResumeProductsModule: FC<IWrapperListProducts> = ({
   values,
   subtitle,
-  categorieUuid
+  categorieUuid,
 }) => {
   const { products } = useProducts();
   const [openModal, setOpenModal] = useState<boolean>(false);
@@ -52,7 +52,11 @@ export const WrapperResumeProductsModule: FC<IWrapperListProducts> = ({
                 key={v.id}
               >
                 <img src={v.path} alt={v.name} />
-                <TextComponent content={v.name} size="10px"  fontStyle="italic" />
+                <TextComponent
+                  content={v.name}
+                  size="10px"
+                  fontStyle="italic"
+                />
                 {v.description && (
                   <TextComponent
                     content={v.description}
