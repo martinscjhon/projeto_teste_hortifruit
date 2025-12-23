@@ -27,5 +27,22 @@ export const MockCongelados: IProductMock = {
       description: null,
     },
     { path: bacon, name: "Bacon", value: 10, id: uuid(), description: null },
+    { path: waffle, name: "Waffle", value: 5, id: uuid(), description: null },
+    { path: pizza, name: "Pizza", value: 10, id: uuid(), description: null },
+    {
+      path: paoQueijo,
+      name: "Pão de queijo",
+      value: 10,
+      id: uuid(),
+      description: null,
+    },
+    {
+      path: sorvete,
+      name: "Sorvete 2L",
+      value: 10,
+      id: uuid(),
+      description: null,
+    },
+    { path: bacon, name: "Bacon", value: 10, id: uuid(), description: null },
   ],
 };

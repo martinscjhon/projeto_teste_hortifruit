@@ -1,7 +1,7 @@
-export interface IWrapperProducts {
+export interface IWrapperListProducts {
   values: IDadosProducts[];
   subtitle: string;
-  categorieUuid: string;
+  categorieUuid?: string;
 }
 
 export interface IDadosProducts {

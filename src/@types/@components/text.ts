@@ -4,4 +4,5 @@ export interface ITextComponent {
   weight?: number;
   color?: string;
   className?: string;
+  fontStyle?: "normal" | "italic" | "oblique"
 }

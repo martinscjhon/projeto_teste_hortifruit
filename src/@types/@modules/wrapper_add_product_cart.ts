@@ -1,4 +1,4 @@
-import type { IDadosProducts } from "./wrapper_products";
+import type { IDadosProducts } from "./wrapper_list_products";
 
 export interface IOpenDetails {
   isOpen: boolean;

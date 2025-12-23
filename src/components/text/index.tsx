@@ -8,10 +8,11 @@ export const TextComponent: FC<ITextComponent> = ({
   weight = 400,
   color = patternColors.black,
   className,
+  fontStyle = "normal"
 }) => {
   return (
     <p
-      style={{ fontSize: size, fontWeight: weight, color }}
+      style={{ fontSize: size, fontWeight: weight, color, fontStyle }}
       className={className}
       dangerouslySetInnerHTML={{ __html: content ?? "" }}
     />

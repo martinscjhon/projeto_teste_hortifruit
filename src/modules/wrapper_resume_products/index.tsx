@@ -2,21 +2,22 @@ import { BadgeComponent } from "@components/badge";
 import { SubTitleComponent } from "@components/subtitle";
 import { TextComponent } from "@components/text";
 import { useProducts } from "@hooks/control_products_hooks";
-import { WrapperDetailsProduct } from "@modules/wrapper_details_product";
+import { WrapperDetailsProductModule } from "@modules/wrapper_add_product_cart";
 import { patternColors } from "@shared/colors";
 import { IntlCurrentFunction } from "@shared/functions/intl_current";
 import { type FC, useState } from "react";
 import { Link } from "react-router-dom";
 import type {
   IDadosProducts,
-  IWrapperProducts,
-} from "src/@types/@modules/wrapper_products";
+  IWrapperListProducts,
+} from "src/@types/@modules/wrapper_list_products";
 
 import { Wrapper } from "./styles";
 
-export const WrapperProductsModule: FC<IWrapperProducts> = ({
+export const WrapperResumeProductsModule: FC<IWrapperListProducts> = ({
   values,
   subtitle,
+  categorieUuid
 }) => {
   const { products } = useProducts();
   const [openModal, setOpenModal] = useState<boolean>(false);
@@ -39,10 +40,10 @@ export const WrapperProductsModule: FC<IWrapperProducts> = ({
       <Wrapper>
         <div className="wrapper_header">
           <SubTitleComponent content={subtitle} />
-          <Link to={""}>Ver mais</Link>
+          <Link to={`/categorie/${categorieUuid}`}>Ver mais</Link>
         </div>
         <div className="wrapper_map">
-          {values.map((v) => {
+          {values.slice(0, 8).map((v) => {
             const item = products.find((p) => p.id === v.id);
             return (
               <div
@@ -51,19 +52,19 @@ export const WrapperProductsModule: FC<IWrapperProducts> = ({
                 key={v.id}
               >
                 <img src={v.path} alt={v.name} />
-                <TextComponent content={v.name} size="10px" />
+                <TextComponent content={v.name} size="10px"  fontStyle="italic" />
                 {v.description && (
                   <TextComponent
                     content={v.description}
                     size="9px"
-                    className="description"
+                    fontStyle="italic"
                   />
                 )}
                 <TextComponent
                   content={IntlCurrentFunction(v.value)}
                   size="10px"
                   weight={600}
-                  color={patternColors.black}
+                  color={patternColors.green}
                 />
                 {item?.quantity && (
                   <BadgeComponent
@@ -77,7 +78,7 @@ export const WrapperProductsModule: FC<IWrapperProducts> = ({
         </div>
       </Wrapper>
 
-      <WrapperDetailsProduct
+      <WrapperDetailsProductModule
         isOpen={openModal}
         productSelected={productSelected}
         onClose={() => setOpenModal(false)}

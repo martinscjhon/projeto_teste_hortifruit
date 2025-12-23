@@ -1,24 +1,29 @@
-import { ButtonComponent } from "@components/button";
 import { Input } from "@components/input";
 import { TitleComponent } from "@components/title";
-import { useProducts } from "@hooks/control_products_hooks";
-import { WrapperProductsModule } from "@modules/wrapper_products";
-import { patternColors } from "@shared/colors";
+import { WrapperResumeProductsModule } from "@modules/wrapper_resume_products";
 import { MockAcougue } from "@shared/mock/acougue";
 import { MockBebidas } from "@shared/mock/bebidas";
 import { MockCongelados } from "@shared/mock/congelados";
 import { MockFrutas } from "@shared/mock/frutas";
 import { MockPadaria } from "@shared/mock/padaria";
 import { MockVerdurasLegumes } from "@shared/mock/verduras_legumes";
-import { type FC, useState } from "react";
+import { type FC, useMemo, useState } from "react";
 import { CiSearch } from "react-icons/ci";
-import { MdDelete, MdKeyboardArrowRight } from "react-icons/md";
 
 import { PrincipalContainer } from "./styles";
+import { ActionsCart } from "@components/actions_cart";
+import { listCategorieMock } from "@shared/mock/list_categories_names";
+import { useDebounced } from "@hooks/debounce";
 
 export const PageInitial: FC = () => {
   const [search, setSearch] = useState<string>("");
-  const { products, clearProducts } = useProducts();
+  const debouncedSearch = useDebounced(search, 300);
+
+  const categorieFilter = useMemo(() => {
+    const term = debouncedSearch.trim().toLowerCase();
+    if (!term) return listCategorieMock;
+    return listCategorieMock.filter(c => c.toLowerCase().includes(term));
+  }, [debouncedSearch]);
 
   return (
     <PrincipalContainer>
@@ -27,7 +32,7 @@ export const PageInitial: FC = () => {
       <Input.Root>
         <Input.Wrapper>
           <Input.Element
-            placeholder="Buscar produtos"
+            placeholder="Buscar categoria"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             name="search"
@@ -37,52 +42,55 @@ export const PageInitial: FC = () => {
         </Input.Wrapper>
       </Input.Root>
 
-      <WrapperProductsModule
-        values={MockFrutas.products}
-        subtitle={MockFrutas.categorieName}
-        categorieUuid={MockFrutas.categorieId}
-      />
-      <WrapperProductsModule
-        values={MockCongelados.products}
-        subtitle={MockCongelados.categorieName}
-        categorieUuid={MockCongelados.categorieId}
-      />
-      <WrapperProductsModule
-        values={MockBebidas.products}
-        subtitle={MockBebidas.categorieName}
-        categorieUuid={MockBebidas.categorieId}
-      />
-      <WrapperProductsModule
-        values={MockPadaria.products}
-        subtitle={MockPadaria.categorieName}
-        categorieUuid={MockPadaria.categorieId}
-      />
-      <WrapperProductsModule
-        categorieUuid={MockVerdurasLegumes.categorieId}
-        values={MockVerdurasLegumes.products}
-        subtitle={MockVerdurasLegumes.categorieName}
-      />
-      <WrapperProductsModule
-        values={MockAcougue.products}
-        subtitle={MockAcougue.categorieName}
-        categorieUuid={MockAcougue.categorieId}
-      />
-
-      {products.length > 0 && (
-        <div className="wrapper_actions_buttons">
-          <ButtonComponent
-            content={"Limpar carrinho"}
-            backgroundColor={patternColors.danger}
-            onClick={clearProducts}
-            icon={MdDelete}
-          />
-          <ButtonComponent
-            content={"Ir para pagamento"}
-            icon={MdKeyboardArrowRight}
-            backgroundColor={patternColors.green}
-          />
-        </div>
+      {categorieFilter?.includes(MockFrutas.categorieName) && (
+        <WrapperResumeProductsModule
+          values={MockFrutas.products}
+          subtitle={MockFrutas.categorieName}
+          categorieUuid={MockFrutas.categorieId}
+        />
       )}
+
+      {categorieFilter?.includes(MockCongelados.categorieName) && (
+        <WrapperResumeProductsModule
+          values={MockCongelados.products}
+          subtitle={MockCongelados.categorieName}
+          categorieUuid={MockCongelados.categorieId}
+        />
+      )}
+
+      {categorieFilter?.includes(MockBebidas.categorieName) && (
+        <WrapperResumeProductsModule
+          values={MockBebidas.products}
+          subtitle={MockBebidas.categorieName}
+          categorieUuid={MockBebidas.categorieId}
+        />
+      )}
+
+      {categorieFilter?.includes(MockPadaria.categorieName) && (
+        <WrapperResumeProductsModule
+          values={MockPadaria.products}
+          subtitle={MockPadaria.categorieName}
+          categorieUuid={MockPadaria.categorieId}
+        />
+      )}
+
+      {categorieFilter?.includes(MockVerdurasLegumes.categorieName) && (
+        <WrapperResumeProductsModule
+          categorieUuid={MockVerdurasLegumes.categorieId}
+          values={MockVerdurasLegumes.products}
+          subtitle={MockVerdurasLegumes.categorieName}
+        />
+      )}
+
+      {categorieFilter?.includes(MockAcougue.categorieName) && (
+        <WrapperResumeProductsModule
+          values={MockAcougue.products}
+          subtitle={MockAcougue.categorieName}
+          categorieUuid={MockAcougue.categorieId}
+        />
+      )}
+
+      <ActionsCart />
     </PrincipalContainer>
   );
 };

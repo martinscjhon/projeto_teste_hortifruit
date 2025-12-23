@@ -50,10 +50,6 @@ export const Wrapper = styled.div`
     cursor: pointer;
     position: relative;
 
-    .description {
-      font-style: italic;
-    }
-
     img {
       width: 50px;
       object-fit: contain;

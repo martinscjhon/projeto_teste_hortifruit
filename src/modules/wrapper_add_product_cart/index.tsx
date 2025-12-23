@@ -7,14 +7,14 @@ import { IntlCurrentFunction } from "@shared/functions/intl_current";
 import { type FC, useEffect, useState } from "react";
 import { AiOutlineLine, AiOutlinePlus } from "react-icons/ai";
 import { IoIosClose } from "react-icons/io";
-import type { IOpenDetails } from "src/@types/@modules/wrapper_details_product";
+import type { IOpenDetails } from "src/@types/@modules/wrapper_add_product_cart";
 
 import { WrapperOverlay, WrraperContent } from "./styles";
 
 const MIN_QTY = 1;
 const MAX_QTY = 99;
 
-export const WrapperDetailsProduct: FC<IOpenDetails> = ({
+export const WrapperDetailsProductModule: FC<IOpenDetails> = ({
   isOpen,
   productSelected,
   onClose,

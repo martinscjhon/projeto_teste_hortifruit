@@ -1,5 +1,6 @@
 import { PrivateLayout } from "@modules/layout/private";
 import { PublicLayout } from "@modules/layout/public";
+import { DetailsCategorie } from "@pages/list_all_products_categorie";
 import { PageInitial } from "@pages/initial";
 import { Login } from "@pages/public/login";
 import { Register } from "@pages/public/register";
@@ -22,6 +23,7 @@ export const RoutesPages: FC = () => {
       {/* Rotas privadas */}
       <Route element={<PrivateLayout />}>
         <Route path="/paginainicial" element={<PageInitial />} />
+        <Route path="/categorie/:categorieId" element={<DetailsCategorie />} />
       </Route>
     </Routes>
   );
